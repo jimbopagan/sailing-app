@@ -1,0 +1,4 @@
+#Ignore files below not needed in git
+node_modules/
+.DS_Store
+config.js 
