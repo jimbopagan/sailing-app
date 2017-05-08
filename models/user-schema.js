@@ -21,12 +21,10 @@ var userSchema = new Schema({
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/, 'Please fill a valid email address']
     },
     phone: Number,
-    launchTime: {
-        description: String,
-        time: function () {
-            return new Date(); // current date and time
-        }
-    },
+//    launchTime: [{
+//        description: String,
+//        takeOffTime: type: Date, default: Date.now
+//    }],
     admin: {
         type: Boolean,
         default: false
