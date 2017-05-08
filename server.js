@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var hole = require('./routes/fishing-route');
+var user = require('./routes/home-route')
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/fishing', function(){
@@ -13,6 +14,7 @@ mongoose.connect('mongodb://localhost/fishing', function(){
 //middleware
 app.use(bodyParser.json());
 
+app.use('/api/home', user);
 app.use('/api/fishing', hole)
 
 app.use(express.static('public'));
