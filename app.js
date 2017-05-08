@@ -6,10 +6,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'HomeController',
 
         })
-//        .when("/profile", {
-//            templateUrl: "/profile/profile.html",
-//            controller: "ProfileController",
-//        })
+        .when("/profile", {
+            templateUrl: "/profile/profile.html",
+            controller: "ProfileController",
+        })
         .otherwise({
             redirecTo: '/home'
         })
