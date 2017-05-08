@@ -9,12 +9,12 @@ var fishingSchema = new Schema({
         description: String
     }],
     coordinates: String,
-//    stars: {
-//        type: Number,
-//        min: 0,
-//        max: 5,
-//        "default": 0
-//    },
+    stars: {
+        type: Number,
+        min: 0,
+        max: 5,
+        "default": 0
+    },
    favoritedBy: [{
        type: Schema.Types.ObjectId,
        ref: "User"
