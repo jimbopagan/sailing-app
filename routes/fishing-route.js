@@ -7,22 +7,12 @@ var Hole = require('../models/fishingHole-schema');
 FishingRouter.route('/')
 //get all fishing holes in a state
     .get(function (req, res) {
+        var query = req.query || {};
     console.dir(res)
-        Hole.find(req.params)//changed from req.params to req.query
-        console.dir(req.params)
-        console.log(req.query)
-//            .where('state')
-//            .equals(req.query.state)
-//            .exec(function (err, holes) {
-//                if (err) {
-//                    res.send(err)
-//                }
-//                console.dir(holes);
-//                res.send({
-//                    holes: holes
-//                })
-//            })
-        res.send(res)
+        Hole.find(query, function(err, holes) {
+            if (err) res.status(500).send(err);
+            res.send(holes);
+        })
     })
     .post(function (req, res) {
         var hole = new Hole(req.body);
