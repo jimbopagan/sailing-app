@@ -35,6 +35,6 @@ var userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Hole"
     }]
-})
+});
 
 module.exports = mongoose.model('User', userSchema);
