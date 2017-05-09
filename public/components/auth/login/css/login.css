@@ -1,6 +1,27 @@
-/*html {*/
-    /*background-image: url("login.jpg");*/
-/*}*/
-* {
-    color: blue;
+body {
+    background-image: url("login.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input[type=password] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+}
+
+
+.btn {
+    background-color: black;
+}
+
+.btn:hover {
+    background-color: grey;
 }
