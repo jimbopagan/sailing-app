@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
-var morgan = require('morgan')
+var morgan = require('morgan');
 var port = process.env.PORT || 3000;
 var hole = require('./routes/fishing-route');
 var user = require('./routes/home-route');
@@ -34,7 +34,7 @@ app.use('/api/home', user);
 app.use('/api/fishing', hole);
 
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
 
 
 

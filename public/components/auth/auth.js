@@ -19,7 +19,8 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/login", {
             templateUrl: "components/auth/login/login.html",
-            controller: "LoginController"
+            controller: "LoginController",
+            css: "components/auth/login/css/login.css"
         })
         .when("/logout", {
             controller: "LogoutController",
