@@ -1,9 +1,30 @@
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
 var app = angular.module("myApp");
 
-app.directive("navbar", ["UserService", function(UserService) {  
+app.directive("navbar", ["UserService", function (UserService) {
     return {
         templateUrl: "components/navbar/navbar.html",
-        link: function(scope) {
+        link: function (scope) {
             scope.userService = UserService;
         }
     }
