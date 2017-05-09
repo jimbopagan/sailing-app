@@ -34,7 +34,7 @@ app.use('/api/home', user);
 app.use('/api/fishing', hole);
 
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public")))
 
 
 

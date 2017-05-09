@@ -21,7 +21,7 @@ authRoutes.post("/login", function (req, res) {
                 message: "User with the provided username was not found"
             })
         } else if (user) {
-            ser.checkPassword(req.body.password, function (err, match) {
+            user.checkPassword(req.body.password, function (err, match) {
                 if (err) throw (err);
                 if (!match) res.status(401).send({
                     success: false,
