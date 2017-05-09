@@ -5,6 +5,14 @@ var app = angular.module("myApp.Auth", []);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
+        .when('/home', {
+            templateUrl: "components/home/home.html",
+            controller: 'HomeController',
+        })
+        .when("/profile", {
+            templateUrl: "/profile/profile.html",
+            controller: "ProfileController",
+        })
         .when("/signup", {
             templateUrl: "components/auth/signup/signup.html",
             controller: "SignupController"
@@ -25,7 +33,9 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "components/auth/reset/reset.html",
             controller: "PasswordResetController"
         })
-
+        .otherwise({
+            redirecTo: '/home'
+        })
 }]);
 
 app.service("TokenService", [function () {
