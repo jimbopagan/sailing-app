@@ -5,20 +5,20 @@ var app = angular.module("myApp.Auth", []);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
-        .when('/home', {
-            templateUrl: "components/home/home.html",
-            controller: 'HomeController',
-        })
+        // .when('/home', {
+        //     templateUrl: "components/home/home.html",
+        //     controller: 'HomeController',
+        // })
         .when("/profile", {
             templateUrl: "/profile/profile.html",
-            controller: "ProfileController",
+            controller: "ProfileController"
         })
         .when("/signup", {
-            templateUrl: "components/auth/signup/signup.html",
+            templateUrl: "/auth/signup/signup.html",
             controller: "SignupController"
         })
         .when("/login", {
-            templateUrl: "components/auth/login/login.html",
+            templateUrl: "/auth/login/login.html",
             controller: "LoginController"
         })
         .when("/logout", {
@@ -26,11 +26,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             template: ""
         })
         .when("/forgot", {
-            templateUrl: "components/auth/forgot/forgot.html",
+            templateUrl: "/auth/forgot/forgot.html",
             controller: "ForgotPasswordController"
         })
         .when("/reset/:resetToken", {
-            templateUrl: "components/auth/reset/reset.html",
+            templateUrl: "/auth/reset/reset.html",
             controller: "PasswordResetController"
         })
         .otherwise({
