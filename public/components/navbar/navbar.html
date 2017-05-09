@@ -1,24 +1,33 @@
-<li class='navbarItem' ng-hide="userService.isAuthenticated()"><a href="#/login">Login</a></li>
-<li class='navbarItem' ng-hide="userService.isAuthenticated()"><a href="#/signup">Signup</a></li>
-<li class='navbarItem' ng-show="userService.isAuthenticated()"><a href="#/logout">Logout</a></li>
-<li class='navbarItem' ng-show="userService.isAuthenticated()"><a href="#/profile">Profile</a></li>
-<div id="menuToggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-        <a href="#/login">
-            <li>Login</li>
+<div id='navFather' class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/login">Login</a></li>
+            <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/signup">Signup</a></li>
+            <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/logout">Logout</a></li>
+            <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/profile">Profile</a></li>
+        </ul>
+    </div>
+    <div id='navHam dropdown'>
+        <a href="#" class="btn btn-info btn-sm">
+            <button onclick="myFunction()" class="dropbtn">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#/login">Link 1</a>
+                <a href="#/signup">Link 2</a>
+                <a href="#/logout">Link 3</a>
+                <a href="#/profile">Link 3</a>
+            </div>
         </a>
-        <a href="#/signup">
-            <li>Signup</li>
-        </a>
-        <a href="#/logout">
-            <li>Logout</li>
-        </a>
-        <a href="#/profile">
-            <li>Profile</li>
-        </a>
-    </ul>
+    </div>
 </div>
