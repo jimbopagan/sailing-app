@@ -1,14 +1,21 @@
 .navbarItem {
     list-style-type: none;
     display: inline;
-    float: left;
-    /*    padding: 10px 15px;*/
 }
 
-#navHam {
-    float: right;
+.navHam {
+    margin-left: 75%;
+    margin-top: 1%;
 }
 
+#bs-example-navbar-collapse-1{
+    float:left;
+}
+#navFather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .glyphicon-menu-hamburger {
     font-size: npx;
     background-color: black;
