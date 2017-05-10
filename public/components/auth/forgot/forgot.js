@@ -1,3 +1,4 @@
+
 var app = angular.module("myApp.Auth");
 app.controller("ForgotPasswordController", ["$scope", "UserService", function ($scope, UserService) {
     $scope.forgotPassword = function(email) {

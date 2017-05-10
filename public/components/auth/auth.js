@@ -1,7 +1,7 @@
 // components/auth/auth.js
 
 
-var app = angular.module("myApp.Auth", []);
+var app = angular.module("myApp.Auth", ['ngMap']);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
