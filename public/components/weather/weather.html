@@ -6,9 +6,19 @@
 </head>
 <body>
 
-<input ng-model="lat">
-<input ng-model="long">
-<button ng-click="getWeatherInfo(lat,long)"> Get Weather Info</button>
+<input ng-model="person.lat">
+<input ng-model="person.long">
+<button ng-click="getWeatherInfo(person)"> Get Weather Info</button>
 
+<div>
+    <p>Date: {{date}}</p>
+    <p>Swell Direction: {{swellDirection}}</p>
+    <p>Cloud Cover: {{cloudCover}}</p>
+    <p>Wind Chill: {{windChill}}</p>
+    <p>Sig Wave Height: {{sigWaveHeight}}</p>
+    <p>Wind Speed: {{windSpeed}}</p>
+    <p>Wind Direction: {{windDirection}}</p>
+    <p>Visibility: {{visibility}}</p>
+</div>
 </body>
 </html>

@@ -7,7 +7,6 @@ app.controller("HomeController", ["$scope", "UserService", 'NgMap', function ($s
 //        $scope.center = "[" + center.lng() + ", " + center.lat() + "]";
 //        console.log($scope.center);
 //    })
-
     //    $scope.getLocation = function () {
     //        var x = document.getElementById("demo");
     //
