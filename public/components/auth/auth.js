@@ -3,7 +3,7 @@
 
 var app = angular.module("myApp.Auth", ['ngMap']);
 
-app.config(["$routeProvider", function ($routeProvider) {
+app.config(["$routeProvider", "$httpProvider", function ($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: "components/home/home.html",
@@ -42,6 +42,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         .otherwise({
             redirecTo: '/home'
         })
+
 }]);
 
 app.service("TokenService", [function () {
@@ -106,6 +107,7 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
     };
 }]);
 
+<<<<<<< HEAD
 app.service('weatherService', function ($http) {
     this.getWeatherInfo = function () {
         return $http.get('/').then(function (response) {
@@ -113,6 +115,32 @@ app.service('weatherService', function ($http) {
         })
     }
 })
+=======
+app.service('weatherService', ['$http', function ($http) {
+    this.getWeatherInfo = function (person) {
+        var key = 'key=5c3af7f2277b4f15bf5214611170805';
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        var date = yyyy + "-" + mm + "-" + dd;
+
+        return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + date
+            + '&q=' + person.lat + "," + person.long + '&format=json').then(function (response) {
+            return response.data
+        })
+    }
+}]);
+
+>>>>>>> 57e098be41e0ddc0c11c2a9592ce4787a7e585b6
 
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
