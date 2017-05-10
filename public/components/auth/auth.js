@@ -123,8 +123,8 @@ app.service('weatherService', ['$http', function ($http) {
 
         var date = yyyy + "-" + mm + "-" + dd;
 
-        return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + date
-            + '&q=' + person.lat + "," + person.long + '&format=json').then(function (response) {
+        return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + date +
+            '&q=' + person.lat + "," + person.long + '&format=json').then(function (response) {
             return response.data
         })
     }
