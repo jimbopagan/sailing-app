@@ -129,7 +129,6 @@ app.service('weatherService', ['$http', function ($http) {
         })
     }
 }]);
-
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
         var token = TokenService.getToken();
