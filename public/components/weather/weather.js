@@ -21,9 +21,6 @@ app.controller("WeatherController", ["$scope", "weatherService", function ($scop
 
 
 
-
-
-
     }
 
 

@@ -3,7 +3,7 @@
 
 var app = angular.module("myApp.Auth", ['ngMap']);
 
-app.config(["$routeProvider", "$httpProvider", function ($routeProvider) {
+app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: "components/home/home.html",
@@ -24,7 +24,7 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider) {
         })
         .when("/weather", {
             templateUrl: "components/weather/weather.html",
-            controller: "WeatherController"
+            controller: "WeatherController",
         })
         .when("/logout", {
             controller: "LogoutController",
@@ -40,8 +40,7 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider) {
         })
         .otherwise({
             redirecTo: '/home'
-        })
-
+        });
 }]);
 
 app.service("TokenService", [function () {
