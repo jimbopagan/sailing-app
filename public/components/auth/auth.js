@@ -7,7 +7,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
     $routeProvider
         .when('/home', {
             templateUrl: "components/home/home.html",
-            controller: 'HomeController'
+            controller: 'HomeController',
+            css: "components/home/home.css"
         })
         .when("/profile", {
             templateUrl: "components/profile/profile.html",
@@ -128,7 +129,6 @@ app.service('weatherService', ['$http', function ($http) {
         })
     }
 }]);
-
 
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {

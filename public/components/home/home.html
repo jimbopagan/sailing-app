@@ -1,19 +1,18 @@
-<div class='row'>
-    <div class='col-xs-12 col-lg-8'>
-        <h1>Welcome</h1>
-        <p>This app is created for the average boater or sailer so they can schedule their trip allowing family member to see launch location, time, and expected time back.</p>
-        <p>This app also fetches the local weather along with several other weather related facts about the day pertinent to a boater or sailor</p>
-        <p>Additionally, this app you can also add your favorite fishing hole. Other users can favorite the top fishing holes. </p>
+<div id='homeFather' class='row'>
+    <div id='homeBack' class='col-xs-12 col-lg-8'>
+        <center>
+            <h1>Welcome</h1>
+            <p>This app is created for the average boater or sailer so they can schedule their trip allowing family member to see launch location, time, and expected time back. This app also fetches the local weather along with several other weather related facts about the day pertinent to a boater or sailor Additionally, this app you can also add your favorite fishing hole. Other users can favorite the top fishing holes. </p>
+        </center>
+        <div class='col-xs-12 col-lg-8'>
+            <h6>Press Button When you are Ready to Launch your Boat:</h6><button type="button" class="btn btn-primary btn-lg" ng-click='getLocation()'>Press When Launching</button>
+            <p id="demo"></p>
+            <p id="demo2"></p>
+        </div>
     </div>
-    <div class='col-xs-12 col-lg-8'>
-        <h6>Press Button When you are Ready to Launch your Boat:</h6><button type="button" class="btn btn-primary btn-lg" ng-click='getLocation()'></button>
-        <p id="demo"></p>
+    <div id='map' class='col-xs-12 col-lg-8'>
+        <ng-map center="current-location">
+            <marker position="current-location"></marker>
+        </ng-map>
     </div>
-    <div id='map' style="background-color: grey" class='col-xs-12 col-lg-8'>
-
-    </div>
-    <ng-map center="current-location">
-        <marker position="current-location"></marker>
-    </ng-map>
 </div>
-
