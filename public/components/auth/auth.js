@@ -22,6 +22,10 @@ app.config(["$routeProvider", function ($routeProvider) {
             controller: "LoginController",
             css: "components/auth/login/css/login.css"
         })
+        .when("/weather", {
+            templateUrl: "components/weather/weather.html",
+            controller: "WeatherController"
+        })
         .when("/logout", {
             controller: "LogoutController",
             template: ""
@@ -101,6 +105,13 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
     };
 }]);
 
+app.service('weatherService', function ($http){
+this.getWeatherInfo = function () {
+    return $http.get('/').then(function(response){
+        return response.data;
+    })
+}
+})
 
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
