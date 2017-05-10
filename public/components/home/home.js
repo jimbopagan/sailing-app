@@ -1,7 +1,7 @@
 var app = angular.module("myApp");
 
 app.controller("HomeController", ["$scope", "UserService", 'NgMap', function ($scope, UserService, NgMap) {
-<<<<<<< HEAD
+
     //    NgMap.getMap().then(function (map) {
     //        var center = map.getCenter();
     //        console.log(center);
