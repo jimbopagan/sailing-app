@@ -24,11 +24,11 @@ WeatherRouter.route('/')
 
 
         request('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + date
-            + '&q=' + req.params.lat + "," + req.params.lon + '&format=json', function (error, response, body){
+            + '&q=' + req.params.lat + "," + req.params.long + '&format=json', function (error, response, body){
             var weatherInfo = JSON.parse(body);
+            console.log(weatherInfo);
             res.send(weatherInfo);
         });
-
     });
 
 module.exports = WeatherRouter;
