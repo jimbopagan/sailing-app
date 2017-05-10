@@ -1,7 +1,10 @@
 <div id='navFather' class="container">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navSon">
         <ul class="nav navbar-nav">
+            <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/home">Home</a></li>
+            <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/weather">Weather</a></li>
+            <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/fishing-hole">Fishing Hole</a></li>
             <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/login">Login</a></li>
             <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/signup">Signup</a></li>
             <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/logout">Logout</a></li>
@@ -12,8 +15,11 @@
         <span class="dropbtn glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
 
         <div id="myDropdown" class="dropdown-content">
+            <a href="#/home">home</a>
+            <a href="#/weather">weather</a>
+            <a href="#/fishing-hole">fishing-hole</a>
             <a href="#/login">Log In</a>
-            <a href="#/signup">Sign Up 2</a>
+            <a href="#/signup">Sign Up</a>
             <a href="#/logout">Log Out</a>
             <a href="#/profile">Profile</a>
         </div>
