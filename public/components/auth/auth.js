@@ -133,6 +133,7 @@ app.service("weatherService", ['$http', function ($http) {
         //
         // var date = yyyy + "-" + mm + "-" + dd;
 
+
         return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + localStorage.getItem('date') +
             '&q=' + localStorage.getItem('lat') + "," + localStorage.getItem('long') + '&format=json').then(function (response) {
             return response.data

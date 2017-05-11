@@ -2,11 +2,11 @@
 <div class="row">
     <div class="col-md-6">
 
-        <button class="btn btn-success" ng-disabled="true" ng-hide="itExists">
+        <button class="btn btn-success" ng-disabled="true" ng-hide="itExists = true">
             Please launch your boat first
         </button>
 
-<button class="btn btn-success" ng-hide="itExists" ng-click="getWeatherInfo()"> Get Weather Info</button>
+<button class="btn btn-success" ng-show="itExists = false" ng-click="getWeatherInfo()"> Get Weather Info</button>
 
 <div>
     <p>Date: {{date}}</p>

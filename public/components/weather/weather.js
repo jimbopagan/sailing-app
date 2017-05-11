@@ -7,8 +7,10 @@ app.controller("WeatherController", ["$scope", "weatherService", function ($scop
         var itExists = false;
     }
     else {
-         itExists = true;
+        itExists = true;
     }
+
+    console.log(itExists);
 
     $scope.getWeatherInfo = function (person){
         weatherService.getWeatherInfo(person).then(function (response){
