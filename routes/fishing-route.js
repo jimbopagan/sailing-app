@@ -8,7 +8,7 @@ var config = require("../config");
 // Angular
 // $http.get("/api/fishing?favoritedBy=" + someUserId)
 
-FishingRouter.route('/')
+FishingRouter.route('/holes')
     //get all fishing holes in a state
     .get(function (req, res) {
         var query = req.query || {};
@@ -28,7 +28,7 @@ FishingRouter.route('/')
             res.send(createdHole)
         });
     });
-FishingRouter.route('/:id')
+FishingRouter.route('/holes/:id')
     .get(function (req, res) {
         Hole.findOne({
             _id: req.params.id
