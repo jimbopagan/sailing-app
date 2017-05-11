@@ -11,17 +11,13 @@
             <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/profile">Profile</a></li>
         </ul>
     </div>
-    <div id='dropdown' class='navHam'>
+    <div id='dropdown' class='navHam hidden-xs'>
         <span class="dropbtn glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
 
         <div id="myDropdown" class="dropdown-content">
-            <a href="#/home">home</a>
-            <a href="#/weather">weather</a>
-            <a href="#/fishing-hole">fishing-hole</a>
-            <a href="#/login">Log In</a>
-            <a href="#/signup">Sign Up</a>
-            <a href="#/logout">Log Out</a>
-            <a href="#/profile">Profile</a>
+            <a href="#/home" ng-show="userService.isAuthenticated()">home</a>
+            <a href="#/weather" ng-show="userService.isAuthenticated()">weather</a>
+            <a href="#/fishing-hole" ng-show="userService.isAuthenticated()">fishing-hole</a>
         </div>
     </div>
 </div>
