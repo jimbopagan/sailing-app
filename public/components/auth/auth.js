@@ -30,7 +30,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/weather", {
             templateUrl: "components/weather/weather.html",
-            controller: "WeatherController"
+            controller: "WeatherController",
+            css: "components/weather/css/weather.css"
         })
         .when("/logout", {
             controller: "LogoutController",
