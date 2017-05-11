@@ -4,6 +4,11 @@
 var app = angular.module("myApp.Auth", ['ngMap']);
 
 app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpProvider) {
+    delete $httpProvider.defaults.headers.common['Authorization'];
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    delete $httpProvider.defaults.headers.common['Authorization'];
+    $httpProvider.defaults.headers.common.Authorization = undefined ;
+
     $routeProvider
         .when('/home', {
             templateUrl: "components/home/home.html",
@@ -34,6 +39,10 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         .when("/forgot", {
             templateUrl: "components/auth/forgot/forgot.html",
             controller: "ForgotPasswordController"
+        })
+        .when("/fishing-hole", {
+            templateUrl: "components/fishing-hole/fishing-hole.html",
+            controller: "FishingHoleController"
         })
         .when("/reset/:resetToken", {
             templateUrl: "components/auth/reset/reset.html",
@@ -106,7 +115,7 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
     };
 }]);
 
-app.service('weatherService', ['$http', function ($http) {
+app.service("weatherService", ['$http', function ($http) {
     this.getWeatherInfo = function (person) {
         var key = 'key=5c3af7f2277b4f15bf5214611170805';
         var today = new Date();
@@ -128,6 +137,15 @@ app.service('weatherService', ['$http', function ($http) {
             return response.data
         })
     }
+}]);
+
+app.service("fishingHoleService", ["$http", function($http){
+    this.getFishingHole = function(){
+        return $http.get('/api/fishing').then(function(response){
+            return response;
+        })
+    }
+
 }]);
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
