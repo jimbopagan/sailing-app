@@ -19,10 +19,8 @@ mongoose.connect(config.database, function () {
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use("/auth", require("./routes/authRoutes"));
-app.use("/auth/change-password", expressJwt({
-    secret: config.secret
-}));
+
+
 // app.use("/auth/forgot", expressJwt({
 //     secret: config.secret
 // }));
@@ -31,7 +29,18 @@ app.use("/api", expressJwt({
     secret: config.secret
 }));
 app.use('/api/home', user);
-app.use('/api/fishing', hole);
+
+app.use('/api/fishing-hole', hole);
+
+app.use('/api/weather',  expressJwt({
+    secret: config.secret
+}));
+
+app.use("/auth/change-password", expressJwt({
+    secret: config.secret
+}));
+
+app.use("/auth", require("./routes/authRoutes"));
 
 
 app.use(express.static(path.join(__dirname, "public")));
