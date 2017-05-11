@@ -7,7 +7,7 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
     delete $httpProvider.defaults.headers.common['Authorization'];
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     delete $httpProvider.defaults.headers.common['Authorization'];
-    $httpProvider.defaults.headers.common.Authorization = undefined ;
+    $httpProvider.defaults.headers.common.Authorization = undefined;
 
     $routeProvider
         .when('/home', {
@@ -34,7 +34,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/logout", {
             controller: "LogoutController",
-            template: ""
+            templateUrl: "components/auth/logout/logout.html",
+            css: "components/auth/logout/css/logout.css"
         })
         .when("/forgot", {
             templateUrl: "components/auth/forgot/forgot.html",
@@ -83,7 +84,7 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
 
     this.logout = function () {
         TokenService.removeToken();
-        $location.path("/");
+        $location.path("/logout");
     };
 
     this.isAuthenticated = function () {
@@ -139,9 +140,9 @@ app.service("weatherService", ['$http', function ($http) {
     }
 }]);
 
-app.service("fishingHoleService", ["$http", function($http){
-    this.getFishingHole = function(){
-        return $http.get('/api/fishing-hole/holes').then(function(response){
+app.service("fishingHoleService", ["$http", function ($http) {
+    this.getFishingHole = function () {
+        return $http.get('/api/fishing-hole/holes').then(function (response) {
             return response;
         })
     }

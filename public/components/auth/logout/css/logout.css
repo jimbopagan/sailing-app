@@ -1,0 +1,24 @@
+#logoutFather{
+    background-image:url(img/kev-seto-94686.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+}
+#logoutMother{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+    
+/*   position: absolute;*/
+/*    top: 100;;*/
+/*    left: 50%;*/
+    
+}
+#logoutSon{
+    background-color: white;
+    border-radius: 20px;
+    opacity: .7;
+}
