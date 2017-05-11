@@ -119,22 +119,22 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
 app.service("weatherService", ['$http', function ($http) {
     this.getWeatherInfo = function (person) {
         var key = 'key=5c3af7f2277b4f15bf5214611170805';
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
+        // var today = new Date();
+        // var dd = today.getDate();
+        // var mm = today.getMonth() + 1;
+        // var yyyy = today.getFullYear();
+        //
+        // if (dd < 10) {
+        //     dd = '0' + dd
+        // }
+        // if (mm < 10) {
+        //     mm = '0' + mm
+        // }
+        //
+        // var date = yyyy + "-" + mm + "-" + dd;
 
-        if (dd < 10) {
-            dd = '0' + dd
-        }
-        if (mm < 10) {
-            mm = '0' + mm
-        }
-
-        var date = yyyy + "-" + mm + "-" + dd;
-
-        return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + date +
-            '&q=' + person.lat + "," + person.long + '&format=json').then(function (response) {
+        return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + localStorage.getItem('date') +
+            '&q=' + localStorage.getItem('lat') + "," + localStorage.getItem('long') + '&format=json').then(function (response) {
             return response.data
         })
     }
@@ -151,7 +151,6 @@ app.service("fishingHoleService", ["$http", function ($http) {
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
         var token = TokenService.getToken();
-        console.log(config);
         if (token && config.url.startsWith('/api')) {
             config.headers = config.headers || {};
             config.headers.Authorization = "Bearer " + token;

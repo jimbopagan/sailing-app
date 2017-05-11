@@ -2,6 +2,14 @@ var app = angular.module("myApp");
 
 app.controller("WeatherController", ["$scope", "weatherService", function ($scope, weatherService, $http){
     $scope.person = {};
+
+    if (localStorage.getItem('lat') === null){
+        var itExists = false;
+    }
+    else {
+         itExists = true;
+    }
+
     $scope.getWeatherInfo = function (person){
         weatherService.getWeatherInfo(person).then(function (response){
             console.log(response.data.weather[0]);
