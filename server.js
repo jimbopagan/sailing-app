@@ -21,7 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// app.use("/auth/forgot", user);
 
 app.use("/api", expressJwt({
     secret: config.secret
@@ -30,9 +29,6 @@ app.use('/api/home', user);
 
 app.use('/api/fishing-hole', hole);
 
-app.use('/api/weather',  expressJwt({
-    secret: config.secret
-}));
 
 app.use("/auth/change-password", expressJwt({
     secret: config.secret

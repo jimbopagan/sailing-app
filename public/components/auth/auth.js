@@ -150,7 +150,8 @@ app.service("fishingHoleService", ["$http", function($http){
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
         var token = TokenService.getToken();
-        if (token) {
+        console.log(config);
+        if (token && config.url.startsWith('/api')) {
             config.headers = config.headers || {};
             config.headers.Authorization = "Bearer " + token;
         }
