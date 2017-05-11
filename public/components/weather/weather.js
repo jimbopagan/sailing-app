@@ -13,15 +13,6 @@ app.controller("WeatherController", ["$scope", "weatherService", function ($scop
             $scope.visibility = response.data.weather[0].hourly[0].visibility;
             $scope.cloudCover = response.data.weather[0].hourly[0].cloudcover;
             $scope.windChill = response.data.weather[0].hourly[0].WindChillF;
-
-
         })
-
-
-
-
-
     }
-
-
 }]);
