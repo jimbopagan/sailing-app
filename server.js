@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
- app.use("/auth/forgot", user);
+// app.use("/auth/forgot", user);
 
 app.use("/api", expressJwt({
     secret: config.secret
