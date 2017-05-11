@@ -107,7 +107,7 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
         })
     };
     this.resetForgottenPassword = function (password, resetToken) {
-        return $http.post("/auth/reset/" + resetToken, {
+        return $http.post("/auth/reset" + resetToken, {
             password: password
         }).then(function (response) {
             return response.data.message;
