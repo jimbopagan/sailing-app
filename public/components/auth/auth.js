@@ -141,7 +141,7 @@ app.service("weatherService", ['$http', function ($http) {
 
 app.service("fishingHoleService", ["$http", function($http){
     this.getFishingHole = function(){
-        return $http.get('/api/fishing').then(function(response){
+        return $http.get('/api/fishing-hole/holes').then(function(response){
             return response;
         })
     }
