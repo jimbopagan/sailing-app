@@ -1,5 +1,5 @@
 var app = angular.module("myApp");
 
-app.controller("FishingHoleController", ["$scope", "UserService", function ($scope, UserService) {
+app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserService", function ($scope,fishingHoleService, UserService) {
 
 }]);
