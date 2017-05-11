@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var cors = require('cors');
 var app = express();
 var path = require('path');
 var morgan = require('morgan');
@@ -15,7 +14,6 @@ mongoose.connect(config.database, function () {
     console.log('mongoose is loose as hell')
 });
 
-app.use(cors());
 
 //middleware
 app.use(morgan('dev'));
