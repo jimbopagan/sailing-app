@@ -122,13 +122,13 @@
                     <option value="WY">Wyoming</option>
                 </select>
 
-                <input class='form-control' placeholder='Type of Fish' type='text' ng-model='hole.fishType'>
+                <input class='form-control' required placeholder='Type of Fish' type='text' ng-model='hole.fishType'>
                 <input class="form-control" placeholder='best time' type='time' ng-model='hole.bestTime'>
-                <textarea class='form-control' placeholder="Description" rows='2' cols='50'
+                <textarea class='form-control' required placeholder="Description" rows='2' cols='50'
                           ng-model="hole.description"></textarea>
                 <input class='form-control' placeholder='location by major landmark' type='text'
                        ng-model='hole.location'>
-                <select class='form-control' ng-model='hole.stars'>
+                <select class='form-control' required ng-model='hole.stars'>
                     <option value=''>Rate Fishing Hole</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
@@ -140,10 +140,12 @@
             </form>
         </div>
     </div>
-    <div ng-repeat="prop in holes" class="box">
-        <h1> Fishing Hole</h1>
-        <h1>{{prop.fishType}}</h1>
-        <h1>{{prop.stars}}</h1>
-        <h1>{{prop.state}}</h1>
+    <div ng-repeat="prop in holes" class="box col-md-4 col-md-offset-4">
+        <h2> Fishing Hole</h2>
+        <p>Fish Type: {{prop.fishType}}</p>
+        <p> Time: {{prop.time}}</p>
+        <p>Stars: {{prop.stars}}</p>
+        <p>State: {{prop.state}}</p>
+        <p>Description: {{prop.description}} </p>
     </div>
 </div>

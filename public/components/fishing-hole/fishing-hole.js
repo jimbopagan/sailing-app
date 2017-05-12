@@ -20,8 +20,10 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
     $scope.newHole = function (hole) {
         fishingHoleService.addFishingHole(hole).then(function(res) {
             if (res) {
-                console.log('hole added');
-                alert('hole added');
+                $scope.message = "Hole added"
+            }
+            else {
+                $scope.message = "There was a problem"
             }
         })
     }
