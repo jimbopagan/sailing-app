@@ -16,11 +16,11 @@ app.controller("WeatherController", ["$scope", "weatherService", function ($scop
             $scope.date = response.data.weather[0].date;
             $scope.swellDirection = response.data.weather[0].hourly[0].swellDir16Point;
             $scope.sigWaveHeight = response.data.weather[0].hourly[0].sigHeight_m;
-            $scope.windSpeed = response.data.weather[0].hourly[0].windspeedMiles;
+            $scope.windSpeed = response.data.weather[0].hourly[0].windspeedMiles + " miles";
             $scope.windDirection = response.data.weather[0].hourly[0].winddir16Point;
-            $scope.visibility = response.data.weather[0].hourly[0].visibility;
-            $scope.cloudCover = response.data.weather[0].hourly[0].cloudcover;
-            $scope.windChill = response.data.weather[0].hourly[0].WindChillF;
+            $scope.visibility = response.data.weather[0].hourly[0].visibility + " %";
+            $scope.cloudCover = response.data.weather[0].hourly[0].cloudcover + " %";
+            $scope.windChill = response.data.weather[0].hourly[0].WindChillF + " F";
         })
     }
 }]);
