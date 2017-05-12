@@ -22,3 +22,8 @@ form {
     align-items: center;
     align-content: center;
 }
+
+.box {
+    text-align: center;
+    color: white;
+}
