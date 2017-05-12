@@ -5,18 +5,16 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
     $scope.get = function (state) {
         console.dir(state);
         fishingHoleService.getFishingHole(state).then(function (res) {
-            if (!res.data) {
-                console.dir(res.data);
+            if (!res) {
+                console.dir(res);
                 console.log('no holes data');
                 $scope.message = 'no fishing holes in your state';
             } else {
                 console.log('else')
-                $scope.holes = res.data;
-                console.log(res.data);
+                $scope.holes = res;
+                console.log(res);
                 //                $scope.currentUser = res.data.currentUser;
             }
-            console.dir(res);
-            console.dir($scope.holes);
         })
     };
     $scope.newHole = function (hole) {
