@@ -19,11 +19,11 @@
     <h4>Visibility: </h4>
         <h5><u>{{visibility}}</u></h5>
 
-        <button class="btn btn-success" ng-disabled="true" ng-show="itExists == true">
+        <button class="btn btn-primary" ng-disabled="true" ng-show="itDoesNotExist == true">
             Please launch your boat first
         </button>
 
-        <button class="btn btn-success" ng-show="itExists == false" ng-click="getWeatherInfo()">
+        <button class="btn btn-primary" ng-show="itDoesNotExist == false" ng-click="getWeatherInfo()">
             Get Weather Info
         </button>
 </div>

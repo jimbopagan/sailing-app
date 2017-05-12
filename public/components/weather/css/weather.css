@@ -7,5 +7,10 @@ div {
     border-radius: 2%;
     background-color: aliceblue;
     opacity: .8;
+
+}
+
+body{
+background: url('weather.jpg') no-repeat center center fixed;
 }
 
