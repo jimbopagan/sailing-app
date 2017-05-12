@@ -4,11 +4,6 @@
 var app = angular.module("myApp.Auth", ['ngMap']);
 
 app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpProvider) {
-    delete $httpProvider.defaults.headers.common['Authorization'];
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    delete $httpProvider.defaults.headers.common['Authorization'];
-    $httpProvider.defaults.headers.common.Authorization = undefined;
-
     $routeProvider
         .when('/home', {
             templateUrl: "components/home/home.html",
@@ -30,7 +25,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/weather", {
             templateUrl: "components/weather/weather.html",
-            controller: "WeatherController"
+            controller: "WeatherController",
+            css: "components/weather/css/weather.css"
         })
         .when("/logout", {
             controller: "LogoutController",
@@ -120,21 +116,6 @@ app.service("UserService", ["$http", "$location", "TokenService", function ($htt
 app.service("weatherService", ['$http', function ($http) {
     this.getWeatherInfo = function (person) {
         var key = 'key=5c3af7f2277b4f15bf5214611170805';
-        // var today = new Date();
-        // var dd = today.getDate();
-        // var mm = today.getMonth() + 1;
-        // var yyyy = today.getFullYear();
-        //
-        // if (dd < 10) {
-        //     dd = '0' + dd
-        // }
-        // if (mm < 10) {
-        //     mm = '0' + mm
-        // }
-        //
-        // var date = yyyy + "-" + mm + "-" + dd;
-
-
         return $http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx?' + key + '&date=' + localStorage.getItem('date') +
             '&q=' + localStorage.getItem('lat') + "," + localStorage.getItem('long') + '&format=json').then(function (response) {
             return response.data

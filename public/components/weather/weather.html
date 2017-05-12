@@ -1,22 +1,31 @@
-
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4 col-md-offset-4">
 
-        <button class="btn btn-success" ng-disabled="true" ng-hide="itExists = true">
+<div class="box">
+    <h4>Date: </h4>
+        <h5><u>{{date}}</u></h5>
+    <h4>Swell Direction: </h4>
+        <h5><u>{{swellDirection}}</u></h5>
+    <h4>Cloud Cover: </h4>
+        <h5><u>{{cloudCover}}</u></h5>
+    <h4>Wind Chill: </h4>
+        <h5><u>{{windChill}}</u></h5>
+    <h4>Sig Wave Height: </h4>
+        <h5><u>{{sigWaveHeight}}</u></h5>
+    <h4>Wind Speed: </h4>
+        <h5><u>{{windSpeed}}</u></h5>
+    <h4>Wind Direction: </h4>
+        <h5><u>{{windDirection}}</u></h5>
+    <h4>Visibility: </h4>
+        <h5><u>{{visibility}}</u></h5>
+
+        <button class="btn btn-success" ng-disabled="true" ng-show="itExists == true">
             Please launch your boat first
         </button>
 
-<button class="btn btn-success" ng-show="itExists = false" ng-click="getWeatherInfo()"> Get Weather Info</button>
-
-<div>
-    <p>Date: {{date}}</p>
-    <p>Swell Direction: {{swellDirection}}</p>
-    <p>Cloud Cover: {{cloudCover}}</p>
-    <p>Wind Chill: {{windChill}}</p>
-    <p>Sig Wave Height: {{sigWaveHeight}}</p>
-    <p>Wind Speed: {{windSpeed}}</p>
-    <p>Wind Direction: {{windDirection}}</p>
-    <p>Visibility: {{visibility}}</p>
+        <button class="btn btn-success" ng-show="itExists == false" ng-click="getWeatherInfo()">
+            Get Weather Info
+        </button>
 </div>
 </div>
 </div>
