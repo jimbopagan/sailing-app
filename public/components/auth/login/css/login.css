@@ -6,8 +6,13 @@ body {
 
 .btn {
     background-color: black;
+    border-color: lightyellow;
 }
 
 .btn:hover {
     background-color: grey;
+}
+.small{
+    color: white;
+    
 }

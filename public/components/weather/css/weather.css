@@ -7,6 +7,7 @@ div {
     border-radius: 2%;
     background-color: aliceblue;
     opacity: .8;
+   margin-top: 10%;
 
 }
 
@@ -14,3 +15,6 @@ body{
 background: url('weather.jpg') no-repeat center center fixed;
 }
 
+.btn{
+     margin-bottom: 1%; 
+}
