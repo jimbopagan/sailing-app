@@ -14,8 +14,12 @@ body {
 .btn {
     margin: auto;
     display: block;
+    margin-bottom: 5%;
 }
 
+#myBtn{
+    margin-bottom: 5%;
+}
 ng-map {
     width: 400px;
     height: 400px;
@@ -26,7 +30,7 @@ ng-map {
 #homeBack {
     background-color: aliceblue;
     opacity: .8;
-    border-radius: 1.5%;
+    border-radius: 1%;
 }
 
 .box {
@@ -35,4 +39,8 @@ ng-map {
 
 .result {
     margin-top: 3%
+}
+#map{
+    position: relative;
+    margin-top: 3%;
 }

@@ -24,6 +24,8 @@ p, a span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
+    opacity: .7;
 }
 .glyphicon-menu-hamburger {
     font-size: npx;
