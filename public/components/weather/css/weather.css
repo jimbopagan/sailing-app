@@ -4,10 +4,10 @@ div {
 
 .box {
     border: 1px solid black;
-    border-radius: 2%;
+    border-radius: 1%;
     background-color: aliceblue;
     opacity: .8;
-   margin-top: 10%;
+    margin-top: 10%;
 
 }
 
@@ -17,4 +17,7 @@ background: url('weather.jpg') no-repeat center center fixed;
 
 .btn{
      margin-bottom: 1%; 
+}
+h1 {
+    color: white;
 }
