@@ -1,0 +1,10 @@
+body {
+    background-size: cover;
+    width: 100%;
+    background-image: url('romanos-senikidis-36213.jpg');
+    text-align: left;
+}
+
+label {
+    color: whitesmoke;
+}

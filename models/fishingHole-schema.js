@@ -4,7 +4,6 @@ var Schema = mongoose.Schema;
 var fishingSchema = new Schema({
     state: String,
     fishType: String,
-    bestTime: String,
     description: String,
     location: {
         type: String,

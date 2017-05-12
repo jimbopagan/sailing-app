@@ -20,7 +20,9 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
     $scope.newHole = function (hole) {
         fishingHoleService.addFishingHole(hole).then(function(res) {
             if (res) {
-                $scope.message = "Hole added"
+                $scope.message = "Hole added";
+                $scope.form.$setPristine();
+                $scope.hole={};
             }
             else {
                 $scope.message = "There was a problem"

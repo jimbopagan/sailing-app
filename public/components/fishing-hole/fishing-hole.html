@@ -58,13 +58,13 @@
                     <option value="WY">Wyoming</option>
                 </select>
 
-                <input class='form-control' type='submit' placeholder='Submit' ng-click=get(user.state)>
+                <input id='button' class='form-control' type='submit' placeholder='Submit' ng-click=get(user.state)>
             </form>
         </div>
     </div>
     <div class='row'>
         <div id='newHole' class='col-lg-4 col-xs-12 form-group'>
-            <form>
+            <form name='form'>
                 <h1>Enter a new Fishing Hole</h1>
 
                 <select class="form-control" required ng-model='hole.state'>
@@ -123,11 +123,8 @@
                 </select>
 
                 <input class='form-control' required placeholder='Type of Fish' type='text' ng-model='hole.fishType'>
-                <input class="form-control" placeholder='best time' type='time' ng-model='hole.bestTime'>
-                <textarea class='form-control' required placeholder="Description" rows='2' cols='50'
-                          ng-model="hole.description"></textarea>
-                <input class='form-control' placeholder='location by major landmark' type='text'
-                       ng-model='hole.location'>
+                <textarea class='form-control' required placeholder="Description" rows='2' cols='50' ng-model="hole.description"></textarea>
+                <input class='form-control' placeholder='Location By Major Landmark' type='text' ng-model='hole.location'>
                 <select class='form-control' required ng-model='hole.stars'>
                     <option value=''>Rate Fishing Hole</option>
                     <option value="5">5</option>
@@ -136,11 +133,11 @@
                     <option value="2">2</option>
                     <option value="1">1</option>
                 </select>
-                <input class='form-control' type='submit' placeholder='Submit' ng-click="newHole(hole)">
+                <input id='button' class='form-control' type='submit' placeholder='Submit' ng-click="newHole(hole)">
             </form>
         </div>
     </div>
-    <div ng-repeat="prop in holes" class="box col-md-4 col-md-offset-4">
+    <div ng-repeat="prop in holes" id='holeResponse' class="box col-xs-12 col-lg-3">
         <h2> Fishing Hole</h2>
         <p>Fish Type: {{prop.fishType}}</p>
         <p> Time: {{prop.time}}</p>
