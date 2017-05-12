@@ -8,7 +8,6 @@
     background-image: url(img/jonathan-smith-142027.jpg);
 }
 .btn {
-    padding-bottom: 4%;
     margin: auto;
     display: block;
 }
@@ -28,4 +27,8 @@ ng-map {
 
 .box {
     margin-bottom: 3%;
+}
+
+.result {
+    margin-top: 3%
 }

@@ -1,21 +1,7 @@
 body {
-    background-image: url("login.jpg");
-    background-size: cover;
+    background: url("login.jpg") no-repeat center center fixed;
     text-align: center;
 }
-
-/*input[type=text] {*/
-    /*background: transparent;*/
-    /*border: none;*/
-    /*border-bottom: 1px solid #000000;*/
-/*}*/
-
-/*input[type=password] {*/
-    /*background: transparent;*/
-    /*border: none;*/
-    /*border-bottom: 1px solid #000000;*/
-    /*outline: none;*/
-/*}*/
 
 
 .btn {

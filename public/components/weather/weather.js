@@ -4,10 +4,10 @@ app.controller("WeatherController", ["$scope", "weatherService", function ($scop
     $scope.person = {};
 
     if (localStorage.getItem('lat') === null){
-        $scope.itExists = true;
+        $scope.itDoesNotExist = true;
     }
     else {
-        $scope.itExists = false;
+        $scope.itDoesNotExist = false;
     }
 
     $scope.getWeatherInfo = function (person){

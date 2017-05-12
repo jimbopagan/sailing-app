@@ -38,5 +38,12 @@ app.controller("HomeController", ["$scope", "UserService", "NgMap", function ($s
             x.innerHTML = "Latitude: " + position.coords.latitude +
                 "<br>Longitude: " + position.coords.longitude;
         }
+
+        if (localStorage.getItem('lat') === null){
+            $scope.itDoesNotExist = true;
+        }
+        else {
+            $scope.itDoesNotExist = false;
+        }
     }
 }]);
