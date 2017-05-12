@@ -3,22 +3,24 @@ var Schema = mongoose.Schema;
 
 var fishingSchema = new Schema({
     state: String,
-    fishType: [{
-        name: String,
-        bestTime: String,
-        description: String
-    }],
-    coordinates: String,
+    fishType: String,
+    bestTime: String,
+    description: String,
+    location: {
+        type: String,
+        unique: true,
+        lowercase: true
+    },
     stars: {
         type: Number,
         min: 0,
         max: 5,
         "default": 0
     },
-   favoritedBy: [{
+   postedBy: {
        type: Schema.Types.ObjectId,
        ref: "User"
-   }]
+   }
 });
 
 module.exports = mongoose.model('Hole', fishingSchema);

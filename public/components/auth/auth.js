@@ -43,7 +43,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/fishing-hole", {
             templateUrl: "components/fishing-hole/fishing-hole.html",
-            controller: "FishingHoleController"
+            controller: "FishingHoleController",
+        css: "components/fishing-hole/css/fishing.css"
         })
         .when("/reset/:resetToken", {
             templateUrl: "components/auth/reset/reset.html",
@@ -143,12 +144,24 @@ app.service("weatherService", ['$http', function ($http) {
 
 app.service("fishingHoleService", ["$http", function ($http) {
     this.getFishingHole = function () {
-        return $http.get('/api/fishing-hole/holes').then(function (response) {
-            return response;
-        })
+        if (!state) {
+            var queryString = "";
+            //            alert('not county equal true')
+        } else {
+            var queryString = "?state=" + state;
+            //            alert('not county equal false')
+        }
+        return $http.get('/api/fishing' + queryString)
     }
-
+    this.addFishingHole = function (hole) {
+        return $http.post("/api/fishing", hole).then(function (response) {
+            return response.data;
+        }, function (response) {
+            alert("Error " + response.status + ": " + response.statusText);
+        });
+    }
 }]);
+
 app.service("AuthInterceptor", ["$q", "$location", "TokenService", function ($q, $location, TokenService) {
     this.request = function (config) {
         var token = TokenService.getToken();
