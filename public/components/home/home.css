@@ -9,15 +9,22 @@
 }
 .btn {
     margin: auto;
+    display: block;
 }
+
 ng-map {
     width: 400px;
     height: 400px;
-    display: flex;
+    display: block;
     margin: auto;
 }
 
 #homeBack {
     background-color: aliceblue;
     opacity: .8;
+    border-radius: 1.5%;
+}
+
+.box {
+    margin-bottom: 3%;
 }
