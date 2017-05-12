@@ -7,7 +7,7 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
         fishingHoleService.getFishingHole(state).then(function (res) {
             if (!res.data) {
                 console.dir(res.data);
-                console.log('no holes data')
+                console.log('no holes data');
                 $scope.message = 'no fishing holes in your state';
             } else {
                 console.log('else')
