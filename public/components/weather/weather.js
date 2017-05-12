@@ -3,15 +3,12 @@ var app = angular.module("myApp");
 app.controller("WeatherController", ["$scope", "weatherService", function ($scope, weatherService, $http){
     $scope.person = {};
 
-
     if (localStorage.getItem('lat') === null){
         $scope.itExists = true;
     }
     else {
         $scope.itExists = false;
     }
-    
-
 
     $scope.getWeatherInfo = function (person){
         weatherService.getWeatherInfo(person).then(function (response){

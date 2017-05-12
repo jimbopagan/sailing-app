@@ -1,6 +1,23 @@
-
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
+
+<div class="box">
+    <h4>Date: </h4>
+        <h5><u>{{date}}</u></h5>
+    <h4>Swell Direction: </h4>
+        <h5><u>{{swellDirection}}</u></h5>
+    <h4>Cloud Cover: </h4>
+        <h5><u>{{cloudCover}}</u></h5>
+    <h4>Wind Chill: </h4>
+        <h5><u>{{windChill}}</u></h5>
+    <h4>Sig Wave Height: </h4>
+        <h5><u>{{sigWaveHeight}}</u></h5>
+    <h4>Wind Speed: </h4>
+        <h5><u>{{windSpeed}}</u></h5>
+    <h4>Wind Direction: </h4>
+        <h5><u>{{windDirection}}</u></h5>
+    <h4>Visibility: </h4>
+        <h5><u>{{visibility}}</u></h5>
 
         <button class="btn btn-success" ng-disabled="true" ng-show="itExists == true">
             Please launch your boat first
@@ -9,15 +26,6 @@
         <button class="btn btn-success" ng-show="itExists == false " ng-click="getWeatherInfo()">
             Get Weather Info
         </button>
-
-    <h2>Date: {{date}}</h2>
-    <h2>Swell Direction: {{swellDirection}}</h2>
-    <h2>Cloud Cover: {{cloudCover}}</h2>
-    <h2>Wind Chill: {{windChill}}</h2>
-    <h2>Sig Wave Height: {{sigWaveHeight}}</h2>
-    <h2>Wind Speed: {{windSpeed}}</h2>
-    <h2>Wind Direction: {{windDirection}}</h2>
-    <h2>Visibility: {{visibility}}</h2>
-
+</div>
 </div>
 </div>

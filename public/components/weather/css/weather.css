@@ -1,0 +1,11 @@
+div {
+    text-align: center;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 2%;
+    background-color: aliceblue;
+    opacity: .8;
+}
+
