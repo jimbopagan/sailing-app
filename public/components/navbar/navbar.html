@@ -2,7 +2,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navSon">
         <ul class="nav navbar-nav">
-            <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/home">Home</a></li>
+            <li class='navbarItem' ng-show="userService.isAuthenticated()"><a id='anchor' href="#/home">Home</a></li>
             <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/weather">Weather</a></li>
             <li class='navbarItem' ng-show="userService.isAuthenticated()"><a class='anchor' href="#/fishing-hole">Fishing Hole</a></li>
             <li class='navbarItem' ng-hide="userService.isAuthenticated()"><a class='anchor' href="#/login">Login</a></li>
@@ -15,9 +15,9 @@
         <span class="dropbtn glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
 
         <div id="myDropdown" class="dropdown-content">
-            <a href="#/home" ng-show="userService.isAuthenticated()">home</a>
-            <a href="#/weather" ng-show="userService.isAuthenticated()">weather</a>
-            <a href="#/fishing-hole" ng-show="userService.isAuthenticated()">fishing holes</a>
+            <a href="#/home" ng-show="userService.isAuthenticated()">Home</a>
+            <a href="#/weather" ng-show="userService.isAuthenticated()">Weather</a>
+            <a href="#/fishing-hole" ng-show="userService.isAuthenticated()">Fishing Holes</a>
         </div>
     </div>
 </div>

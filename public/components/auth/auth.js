@@ -18,7 +18,7 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         .when("/signup", {
             templateUrl: "components/auth/signup/signup.html",
             controller: "SignupController",
-            css: "components/auth/login/css/login.css"
+            css: "components/auth/signup/css/signup.css"
         })
         .when("/login", {
             templateUrl: "components/auth/login/login.html",

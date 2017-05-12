@@ -1,50 +1,58 @@
 .navbarItem {
     list-style-type: none;
-/*    display: inline;*/
+    /*    display: inline;*/
 }
-#navSon{
+
+#navSon {
     float: left;
     display: flex;
     flex-direction: row;
-    
-    
 }
+
 a {
     color: #00f;
 }
-p, a span {
-    color: #000;
-}
-.navHam {
-    margin-left: 75%;
-/*    margin-top: 0 !important;*/
+
+.anchor {
+    color: black;
 }
 
-#navFather{
+p,
+a span {
+    color: #000;
+}
+
+.navHam {
+    margin-left: 75%;
+    /*    margin-top: 0 !important;*/
+}
+
+#navFather {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
     opacity: .7;
 }
+
 .glyphicon-menu-hamburger {
     font-size: npx;
     background-color: black;
     color: silver;
 }
-#myDropdown{
+
+#myDropdown {
     margin-top: 0;
     padding-top: 0;
+    z-index: 999999
+/*    position: relative;*/
 }
-.btn-info {
-    background-color: gray;
-    border-color: black;
-}
+
 
 .navbar-inverse .navbar-nav>li>a {
     color: black;
-/*    background-color: white;*/
-/*    opacity:.2;*/
+    background-color: white;
+    opacity: .9;
 }
 
 
@@ -52,7 +60,7 @@ p, a span {
 
 .dropbtn {
     position: absolute;
-    top:5px;
+    top: 5px;
     background-color: transparent;
     color: black;
     padding-top: 0;
@@ -69,6 +77,7 @@ p, a span {
 
 .dropbtn:hover,
 .dropbtn:focus {
+    z-index: 1;
     background-color: gray;
     outline: none;
 }
@@ -107,7 +116,7 @@ p, a span {
 /* Change color of dropdown links on hover */
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: gray;
 }
 
 

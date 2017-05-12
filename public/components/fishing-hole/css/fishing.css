@@ -1,4 +1,4 @@
-body{
+body {
     height: 100vh;
     background-size: cover;
     background-image: url(austin-neill-168427.jpg);
@@ -15,7 +15,8 @@ form {
     flex-direction: column;
     align-items: center;
 }
-.row{
+
+.row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,3 +34,20 @@ p {
     font-size: 20px;
     font-weight: 300;
 }
+
+#button {
+    background-color: lightslategray;
+}
+
+#holeResponse {
+    position: relative;
+    left: 12.5%;
+    display: inline-block;
+    margin-right: .1%;
+    margin-bottom: .1%;
+    
+}
+/*
+#fishingFather{
+    margin-left: 5%;
+}*/
