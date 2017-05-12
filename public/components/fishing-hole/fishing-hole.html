@@ -3,7 +3,7 @@
         <div id='holes' class='col-lg-4 col-xs-12'>
             <h1> Fishing Hole</h1>
             <form>
-                <select required ng-model='user.state'>
+                <select class="form-control" required ng-model='user.state'>
     <option value=''>Pick State</option>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
@@ -58,15 +58,16 @@
 	<option value="WY">Wyoming</option>
 </select>
 
-                <input type='submit' placeholder='Submit' ng-click=get(user)> 
+                <input class='form-control' type='submit' placeholder='Submit' ng-click=get(user)>
             </form>
         </div>
     </div>
     <div class='row'>
-        <div id='newHole' class='col-lg-4 col-xs-12'>
+        <div id='newHole' class='col-lg-4 col-xs-12 form-group'>
+			<form>
             <h1>Enter a new Fishing Hole</h1>
-            <form>
-                <select required ng-model='hole.state'>
+
+                <select class="form-control" required ng-model='hole.state'>
     <option value=''>Pick State</option>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
@@ -120,11 +121,12 @@
 	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
 </select>
-                <input placeholder='Type of Fish' type='text' ng-model='hole.fishType'>
-                <input placeholder='best time' type='time' ng-model='hole.bestTime'>
-                <textarea placeholder="Description" rows='2' cols='50' ng-model="hole.description"></textarea>
-                <input placeholder='location by major landmark' type='text' ng-model='hole.location'>
-                <select ng-model='hole.stars'>
+
+                <input class='form-control' placeholder='Type of Fish' type='text' ng-model='hole.fishType'>
+                <input class="form-control" placeholder='best time' type='time' ng-model='hole.bestTime'>
+                <textarea class='form-control' placeholder="Description" rows='2' cols='50' ng-model="hole.description"></textarea>
+                <input class='form-control' placeholder='location by major landmark' type='text' ng-model='hole.location'>
+                <select class='form-control' ng-model='hole.stars'>
                 <option value=''>Rate Fishing Hole</option>
                 <option value="5">5</option>
                 <option value="4">4</option>
@@ -132,7 +134,7 @@
                 <option value="2">2</option>
                 <option value="1">1</option>
                 </select>
-                <input type='submit' placeholder='Submit' ng-click="newHole(hole)">
+                <input class='form-control' type='submit' placeholder='Submit' ng-click="newHole(hole)">
             </form>
         </div>
     </div>
