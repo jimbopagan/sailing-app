@@ -29,10 +29,11 @@ var userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    userHoles: [{
-        type: Schema.Types.ObjectId,
-        ref: "Hole"
-     }],
+    location: String,
+//    userHoles: [{
+//        type: Schema.Types.ObjectId,
+//        ref: "Hole"
+//     }],
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });
