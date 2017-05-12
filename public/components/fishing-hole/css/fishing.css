@@ -22,3 +22,14 @@ form {
     align-items: center;
     align-content: center;
 }
+
+.box {
+    text-align: center;
+    background-color: aliceblue;
+    opacity: .8;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 300;
+}

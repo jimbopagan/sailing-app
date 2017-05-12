@@ -11,32 +11,22 @@ var config = require("../config");
 FishingRouter.route('/holes')
     //get all fishing holes in a state
     .get(function (req, res) {
-        console.log(req.query);
-        console.log(req.params.id);
-        User.find(req.params.id)
-            .where('state')
-            .equals(req.query.state)
-            .exec(function (err, users) {
-                if (err) {
-                    res.send(err)
-                }
-                console.dir(users);
-                res.send({
-                    users: users,
-                    currentUser: req.user
+                var query = req.query || {};
+                console.dir(res)
+                Hole.find(query, function (err, holes) {
+                    if (err) res.status(500).send(err);
+                    res.send(holes);
                 })
             })
-    })
-    .post(function (req, res) {
-        var hole = new Hole(req.body);
-        //        hole.favoritedBy = req.favoritedBy;
-        hole.save(function (err, createdHole) {
-            if (err) {
-                res.send(err)
-            }
-            res.send(createdHole)
-        });
-    });
+            .post(function (req, res) {
+                var hole = new Hole(req.body);
+                hole.save(function (err, createdHole) {
+                    if (err) {
+                        res.send(err)
+                    }
+                    res.send(createdHole)
+                });
+            });
 
 FishingRouter.route('/holes/:id')
     .get(function (req, res) {

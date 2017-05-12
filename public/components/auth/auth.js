@@ -127,18 +127,20 @@ app.service("weatherService", ['$http', function ($http) {
 }]);
 
 app.service("fishingHoleService", ["$http", function ($http) {
-    this.getFishingHole = function () {
+    this.getFishingHole = function (state) {
         if (!state) {
             var queryString = "";
             //            alert('not county equal true')
         } else {
-            var queryString = "?state=" + state;
+            var queryString = "?state=" + state.toString();
             //            alert('not county equal false')
         }
-        return $http.get('/api/fishing' + queryString)
+        return $http.get('/api/fishing-hole/holes' + queryString).then(function(response){
+            return response.data
+        })
     }
     this.addFishingHole = function (hole) {
-        return $http.post("/api/fishing", hole).then(function (response) {
+        return $http.post("/api/fishing-hole/holes", hole).then(function (response) {
             return response.data;
         }, function (response) {
             alert("Error " + response.status + ": " + response.statusText);
