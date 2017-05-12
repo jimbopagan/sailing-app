@@ -12,7 +12,8 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/profile", {
             templateUrl: "components/profile/profile.html",
-            controller: "ProfileController"
+            controller: "ProfileController",
+            css: "components/profile/css/profile.css"
         })
         .when("/signup", {
             templateUrl: "components/auth/signup/signup.html",
@@ -36,12 +37,13 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
         })
         .when("/forgot", {
             templateUrl: "components/auth/forgot/forgot.html",
-            controller: "ForgotPasswordController"
+            controller: "ForgotPasswordController",
+            css: "components/auth/forgot/css/forgot.css"
         })
         .when("/fishing-hole", {
             templateUrl: "components/fishing-hole/fishing-hole.html",
             controller: "FishingHoleController",
-        css: "components/fishing-hole/css/fishing.css"
+            css: "components/fishing-hole/css/fishing.css"
         })
         .when("/reset/:resetToken", {
             templateUrl: "components/auth/reset/reset.html",

@@ -1,0 +1,14 @@
+#profileFather{
+    height:100vh;
+/*    width: 100%;*/
+    
+}
+
+#profileImg{
+    width:20%;
+    height: auto;
+}
+body{
+    background-size: cover;
+    background-image: url(jesse-collins-153658.jpg);
+}
