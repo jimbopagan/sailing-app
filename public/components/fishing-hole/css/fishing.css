@@ -29,6 +29,10 @@ form {
     background-color: aliceblue;
     opacity: .8;
 }
+.results {
+    margin-top: 2%;
+    padding: .5%;
+}
 
 p {
     font-size: 20px;

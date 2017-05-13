@@ -1,21 +1,21 @@
 var express = require('express');
 var FishingRouter = express.Router();
-//var User = require('../models/user-schema');
 var Hole = require('../models/fishingHole-schema');
 var jwt = require("jsonwebtoken");
 var config = require("../config");
 
-// Angular
-// $http.get("/api/fishing?favoritedBy=" + someUserId)
 
 FishingRouter.route('/holes')
-    //get all fishing holes in a state
     .get(function (req, res) {
                 var query = req.query || {};
-                console.dir(res)
                 Hole.find(query, function (err, holes) {
                     if (err) res.status(500).send(err);
-                    res.send(holes);
+                    if (!holes.length){
+                        res.send('No results found');
+                    }
+                    else {
+                        res.send(holes);
+                    }
                 })
             })
             .post(function (req, res) {

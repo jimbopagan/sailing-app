@@ -134,11 +134,17 @@
                     <option value="1">1</option>
                 </select>
                 <input id='button' class='form-control' type='submit' placeholder='Submit' ng-click="newHole(hole)">
-                {{message}}
+
+                <div class="box results" ng-show="resultMessage">
+                   <h1> {{message}}</h1>
+                    <h1> {{resultMessage}} </h1>
+                </div>
             </form>
         </div>
     </div>
-    <div ng-repeat="prop in holes" id='holeResponse' class="box col-xs-12 col-lg-3">
+
+
+    <div ng-repeat="prop in holes track by $index" id='holeResponse' class="box col-xs-12 col-lg-3">
         <h2> Fishing Hole</h2>
         <p>Fish Type: {{prop.fishType}}</p>
         <p>Stars: {{prop.stars}}</p>

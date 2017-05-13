@@ -5,10 +5,12 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
     $scope.get = function (state) {
         fishingHoleService.getFishingHole(state).then(function (res) {
             console.log(res)
-            if(res == []){
+            if(res == 'No results found'){
                 $scope.resultMessage = 'no fishing holes in your state';
-            } else {
+                $scope.holes = [];
+            } else if (res) {
                 $scope.holes = res;
+                $scope.resultMessage = null;
             }
         })
     };
