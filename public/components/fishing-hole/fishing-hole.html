@@ -136,8 +136,10 @@
                 <input id='button' class='form-control' type='submit' placeholder='Submit' ng-click="newHole(hole)">
 
                 <div class="box results" ng-show="resultMessage">
-                   <h1> {{message}}</h1>
                     <h1> {{resultMessage}} </h1>
+                </div>
+                <div class="box results" ng-show="message">
+                <h1> {{message}}</h1>
                 </div>
             </form>
         </div>

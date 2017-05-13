@@ -7,9 +7,11 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
             console.log(res)
             if(res == 'No results found'){
                 $scope.resultMessage = 'no fishing holes in your state';
+                $scope.message = null;
                 $scope.holes = [];
             } else if (res) {
                 $scope.holes = res;
+                $scope.message = null;
                 $scope.resultMessage = null;
             }
         })
@@ -18,11 +20,13 @@ app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserSe
         fishingHoleService.addFishingHole(hole).then(function(res) {
             if (res) {
                 $scope.message = "Hole added";
+                $scope.resultMessage = null;
                 $scope.form.$setPristine();
                 $scope.hole={};
             }
             else {
-                $scope.message = "There was a problem"
+                $scope.message = "There was a problem";
+                $scope.resultMessage = null;
             }
         })
     }
