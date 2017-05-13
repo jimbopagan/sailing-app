@@ -3,17 +3,12 @@ var app = angular.module("myApp");
 app.controller("FishingHoleController", ["$scope", "fishingHoleService", "UserService", function ($scope, fishingHoleService, UserService) {
     $scope.holes = [];
     $scope.get = function (state) {
-        console.dir(state);
         fishingHoleService.getFishingHole(state).then(function (res) {
-            if (!res) {
-                console.dir(res);
-                console.log('no holes data');
-                $scope.message = 'no fishing holes in your state';
+            console.log(res)
+            if(res == []){
+                $scope.resultMessage = 'no fishing holes in your state';
             } else {
-                console.log('else')
                 $scope.holes = res;
-                console.log(res);
-                //                $scope.currentUser = res.data.currentUser;
             }
         })
     };
