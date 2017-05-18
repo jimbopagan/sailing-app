@@ -49,6 +49,11 @@ app.config(["$routeProvider", "$httpProvider", function ($routeProvider, $httpPr
             templateUrl: "components/auth/reset/reset.html",
             controller: "PasswordResetController"
         })
+        .when('/', {
+            templateUrl: "components/home/home.html",
+            controller: 'HomeController',
+            css: "components/home/home.css"
+        })
         .otherwise({
             redirecTo: '/home'
         });
